@@ -3,13 +3,14 @@
 - hosts: localhost
   become: true
 
-  tasks:
+  pre_tasks:
 
-  - name: Install packages
+  - name: Update repositories
     apt:
-      name:
-        - htop
-        - mc
-        - tmux
+      update_cache: true
+      changed_when: false
+
+  tasks:
+    - include: tasks/packages.yml
 
 ...
