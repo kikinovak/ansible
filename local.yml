@@ -13,5 +13,6 @@
   tasks:
     - include: tasks/packages.yml
     - include: tasks/users.yml
+    - include: tasks/cron.yml
 
 ...
